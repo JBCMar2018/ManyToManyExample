@@ -1,6 +1,8 @@
 package me.afua.artisteforms;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Song {
@@ -12,10 +14,11 @@ public class Song {
 
     //There are many songs, but each of them is led by ONE artiste.
     //The Artiste's ID is repsresented in the song table as leadArtiste
-    @ManyToOne()
-    Artiste leadArtiste;
+    @ManyToMany()
+    Set<Artiste> leadArtiste;
 
     public Song() {
+        leadArtiste = new HashSet<>();
     }
 
     public Song(String title) {
@@ -38,11 +41,11 @@ public class Song {
         this.title = title;
     }
 
-    public Artiste getLeadArtiste() {
+    public Set<Artiste> getLeadArtiste() {
         return leadArtiste;
     }
 
-    public void setLeadArtiste(Artiste leadArtiste) {
+    public void setLeadArtiste(Set<Artiste> leadArtiste) {
         this.leadArtiste = leadArtiste;
     }
 }

@@ -39,6 +39,11 @@ public class MainController {
 
         a.setStageName("Sting");
         artistes.save(a);
+
+
+        a = new Artiste("Paul McCartney");
+        artistes.save(a);
+
         return artistes.findAll().toString();
     }
 

@@ -15,7 +15,7 @@ public class Artiste {
 
     //One Artiste HAS many songs. And in each Song, the artiste's ID is represented by 'leadArtiste'.
     //Have a look at the database after adding a song to understand this relationship.
-    @OneToMany(mappedBy = "leadArtiste")
+    @ManyToMany(mappedBy = "leadArtiste")
     Set <Song> mySongs;
 
     public Artiste() {
