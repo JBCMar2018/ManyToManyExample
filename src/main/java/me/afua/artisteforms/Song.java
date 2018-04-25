@@ -15,7 +15,7 @@ public class Song {
     //There are many songs, but each of them is led by ONE artiste.
     //The Artiste's ID is repsresented in the song table as leadArtiste
     @ManyToMany()
-    Set<Artiste> leadArtiste;
+    private Set<Artiste> leadArtiste;
 
     public Song() {
         leadArtiste = new HashSet<>();
