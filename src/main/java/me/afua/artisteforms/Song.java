@@ -23,6 +23,7 @@ public class Song {
 
     public Song(String title) {
         this.title = title;
+        leadArtiste = new HashSet<>();
     }
 
     public long getId() {
